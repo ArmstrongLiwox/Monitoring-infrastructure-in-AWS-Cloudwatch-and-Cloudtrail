@@ -292,6 +292,44 @@ In the IAM console navigation menu, click on policy and on the top right, select
 ![choose ec2tag](<images/choose ec2tag.png>)
 
 ![ec2tag attached](<images/ec2tag attached.png>)
+---
+
+2. Let's recall the parameters we created for our EC2 metric, now let's view the metric on CloudWatch console.
+Navigate to the CloudWatch console. 
+In the navigation menu, select all metrics.
+
+![cloud watch](<images/cloud watch.png>)
+
+![metrics](images/metrics.png)
+
+![view](images/view.png)
+
+search for CWagent
+
+![CWAgent](images/cwagent.png)
+
+![cloudwatch to ec2](<images/cloudwatch ec2.png>)
+
+
+We have successfuully installed and cofigured CloudWatch to monitor your EC2 instance.
+
+To monitor more metrics, you can go to the parameter store and edit the parameter we created then add more parameters to it. 
+
+![success](images/success.jpg)
+
+Follow the AWS official documentation to read more on parameters syntax for metrics
+https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Agent-Configuration-File-Details.html
+
+we will further explore more parameters:
+
+
+- CloudWatch Metrics and Alarms
+
+- Monitoring AWS Resources with CloudWatch
+
+- Auditing and Analyzing with CloudTrail
+
+- Best Practices and Integration
 
 
 
