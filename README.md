@@ -186,9 +186,10 @@ Now that we have created an IAM Role and also created a parameter in the Account
 
 2. Now we will need to launch an Amazon linux 2 instance and attach the role we created in step 1. Follow the images below to attach IAM role to your instance
 
+![launch ec2](<images/launch ec2.png>)
 
+![linux ec2](<images/amazon linux 2.png>)
 
+![modify](images/modify.png)
 
-
-
-
+![iam role](<images/iam role.png>)
