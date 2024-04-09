@@ -1,5 +1,15 @@
 # Introduction to Monitoring Infrastructure in AWS
 
+![image](images/clou.jpg)
+
+Monitoring infrastructure in AWS using CloudWatch and CloudTrail is essential for maintaining the security and performance of your cloud resources. Here's a brief introduction:
+
+**Amazon CloudWatch** is a monitoring service that provides data and actionable insights to monitor your AWS resources. With CloudWatch, you can collect and track metrics, set alarms, and automatically react to changes in your AWS resources. It allows you to gain system-wide visibility into resource utilization, application performance, and operational health².
+
+**AWS CloudTrail** is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account. It records actions taken by a user, role, or an AWS service and delivers log files to you. The recorded information includes the identity of the API caller, the time of the API call, the source IP address of the API caller, the request parameters, and the response elements returned by the AWS service¹.
+
+Together, these services provide a comprehensive view of your AWS environment, allowing you to detect unusual activity, set alarms for specific events, and maintain a robust security posture.
+
 ![AWS metrics](<images/aws metrics.png>)
 
 In this project we will Learn to effectively monitor your AWS infrastructure using CloudWatch and Cloud Trail, gaining insights into system performance, security, and operational health.
