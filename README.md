@@ -55,15 +55,58 @@ CloudWatch Alarms allow users to define thresholds on CloudWatch Metrics and tri
 ## Key aspects of CloudWatch Alarms include:
 
 Thresholds and Actions: Users can set thresholds on CloudWatch Metrics, specifying conditions that, when met or exceeded, trigger alarm states. When an alarm enters an alarm state, users can configure actions such as sending notifications via Amazon SNS, executing AWS Lambda functions, or auto-scaling resources.
-Alarm States: CloudWatch Alarms have three possible states: OK, INSUFFICIENT_DATA, and ALARM. The OK state indicates that the metric is within the defined threshold, while the ALARM state indicates that the threshold has been breached. The INSUFFICIENT_DATA state occurs when there is not enough data to evaluate the alarm.
-Alarm History: CloudWatch maintains a history of alarm state changes, allowing users to track when alarms transition between states and investigate the circumstances surrounding each state change.
-Configuration and Management: Users can create, modify, and delete alarms through the CloudWatch Management Console, AWS CLI, or SDKs. Alarms can be managed individually or as part of larger monitoring configurations, such as CloudFormation templates or AWS Auto Scaling policies.
-Monitoring AWS EC2 using CloudWatch
-Now that we an idea of what AWS CloudWatch and CloudTrail is all about, let launch an EC2 instance and monitor it
-Step 1: Create an IAM Role With CloudWatch Full Access and SSMFullAccess
+
+## Alarm States: 
+
+CloudWatch Alarms have three possible states: OK, INSUFFICIENT_DATA, and ALARM. The OK state indicates that the metric is within the defined threshold, while the ALARM state indicates that the threshold has been breached. The INSUFFICIENT_DATA state occurs when there is not enough data to evaluate the alarm.
+
+## Alarm History: 
+
+CloudWatch maintains a history of alarm state changes, allowing users to track when alarms transition between states and investigate the circumstances surrounding each state change.
+
+## Configuration and Management: 
+
+Users can create, modify, and delete alarms through the CloudWatch Management Console, AWS CLI, or SDKs. Alarms can be managed individually or as part of larger monitoring configurations, such as CloudFormation templates or AWS Auto Scaling policies.
+
+## Monitoring AWS EC2 using CloudWatch
+
+Now that we have an idea of what AWS CloudWatch and CloudTrail is all about, let launch an EC2 instance and monitor it
+
+## Step 1: Create an IAM Role With CloudWatch Full Access and SSMFullAccess
+
 1. Navigate to the IAM console.
+
 2. In the IAM Console navigation click on roles.
 
+![roles](images/roles.png)
+
+![create roles](<images/create role.png>)
+
+![ec2 role](images/ec2.png)
+
+
+3. Follow the image to create a role with ```CloudWatchFullAccess``` and ```SSMFullAccess``` policy
+
+![full access](<images/full access.png>)
+
+![ssm](images/ssm.png)
+
+![ssm next](<images/ssm (2).png>)
+
+![ec2 role](<images/ec2 role.png>)
+
+![create](images/create.png)
+
+![role created](<images/role created.png>)
+
+
+## Create A Parameter In System Manager
+
+Now that we have created an IAM role, we need to create a paramater in the system manager console. By doing this, we will be able to define the metrics we want to monitor for our EC2 instance
+
+1. Navigate to the AWS System Manager Console
+
+2. In the AWS System Manager navigate menu, select parameter store
 
 
 
