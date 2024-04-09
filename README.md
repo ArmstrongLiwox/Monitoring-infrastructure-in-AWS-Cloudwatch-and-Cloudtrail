@@ -2,8 +2,6 @@
 
 ![image](images/clou.jpg)
 
-![featured image](images/cloudwatch.jpg)
-
 Monitoring infrastructure in AWS using CloudWatch and CloudTrail is essential for maintaining the security and performance of your cloud resources. Here's a brief introduction:
 
 **Amazon CloudWatch** is a monitoring service that provides data and actionable insights to monitor your AWS resources. With CloudWatch, you can collect and track metrics, set alarms, and automatically react to changes in your AWS resources. It allows you to gain system-wide visibility into resource utilization, application performance, and operational health².
