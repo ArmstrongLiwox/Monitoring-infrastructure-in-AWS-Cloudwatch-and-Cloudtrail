@@ -22,3 +22,50 @@ Amazon CloudWatch Metrics and Alarms are essential components of the Amazon Clou
 
 CloudWatch Metrics are data points representing the behavior of AWS resources and applications over time. These metrics can be collected from various AWS services such
 as Amazon EC2, Amazon RDS, Amazon S3, AWS Lambda, and many others. Metrics provide insights into the performance, health, and operational status of these resources, allowing users to monitor and analyze their behavior.
+
+
+# Key aspects of CloudWatch Metrics include:
+
+## Default and Custom Metrics: 
+
+AWS services automatically publish default metrics to CloudWatch, such as CPU utilization, network traffic, and disk I/O for EC2 instances. Additionally, users can create custom metrics to monitor specific aspects of their applications or services.
+
+# Namespace and Dimensions: 
+
+Metrics are organized into namespaces, which categorize related metrics together. Within each namespace, metrics can have dimensions that further specify the resource or aspect being monitored. For example, an EC2 instance metric might have dimensions such as Instanceld or instanceType.
+
+# Timestamps and Units: 
+
+Each metric data point includes a timestamp indicating when the measurement was taken, as well as a unit specifying the measurement's scale (e.g., bytes, percentage, seconds).
+
+![alarms](images/alarm.png)
+
+
+## Retention and Granularity: 
+
+CloudWatch retains metric data for different periods depending on the data's age and granularity. Users can specify the granularity of their metric data, ranging from one-minute to one-day intervals.
+
+![granularity](images/granularity.png)
+
+
+# CloudWatch Alarms:
+
+CloudWatch Alarms allow users to define thresholds on CloudWatch Metrics and trigger actions when these thresholds are breached. Alarms are used to proactively monitor the health and performance of AWS resources and applications, enabling users to respond promptly to changes in their environment.
+
+## Key aspects of CloudWatch Alarms include:
+
+Thresholds and Actions: Users can set thresholds on CloudWatch Metrics, specifying conditions that, when met or exceeded, trigger alarm states. When an alarm enters an alarm state, users can configure actions such as sending notifications via Amazon SNS, executing AWS Lambda functions, or auto-scaling resources.
+Alarm States: CloudWatch Alarms have three possible states: OK, INSUFFICIENT_DATA, and ALARM. The OK state indicates that the metric is within the defined threshold, while the ALARM state indicates that the threshold has been breached. The INSUFFICIENT_DATA state occurs when there is not enough data to evaluate the alarm.
+Alarm History: CloudWatch maintains a history of alarm state changes, allowing users to track when alarms transition between states and investigate the circumstances surrounding each state change.
+Configuration and Management: Users can create, modify, and delete alarms through the CloudWatch Management Console, AWS CLI, or SDKs. Alarms can be managed individually or as part of larger monitoring configurations, such as CloudFormation templates or AWS Auto Scaling policies.
+Monitoring AWS EC2 using CloudWatch
+Now that we an idea of what AWS CloudWatch and CloudTrail is all about, let launch an EC2 instance and monitor it
+Step 1: Create an IAM Role With CloudWatch Full Access and SSMFullAccess
+1. Navigate to the IAM console.
+2. In the IAM Console navigation click on roles.
+
+
+
+
+
+
