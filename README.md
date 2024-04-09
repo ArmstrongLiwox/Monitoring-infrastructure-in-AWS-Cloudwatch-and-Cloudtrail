@@ -257,12 +257,57 @@ Before we can monitor our EC2 instance metrics, create a new policy and attach i
 
 In the IAM console navigation menu, click on policy and on the top right, select create policy. Follow the image below to creaet a new policy for the IAM role. Use the Json code snippet below for your policy
 
-![policy](images/policies.png)
+![policy](images/policy.png)
 
-![edit](images/edit.png)
+![create policy](<images/create policy (2).png>)
 
-![create policy](<images/create policy.png>)
+![jason file](images/json.png)
 
-![tag](images/tag.png)
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeTags"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+
+```
+
+![paste jason](images/paste.png)
+
+![next](images/next.png)
+
+![ec2 role](<images/ec2 role (2).png>)
+
+![edit attach](<images/edit attach.png>)
+
+![ec2 tag](<images/ec2 tag.png>)
+
+![choose ec2tag](<images/choose ec2tag.png>)
+
+![ec2tag attached](<images/ec2tag attached.png>)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
