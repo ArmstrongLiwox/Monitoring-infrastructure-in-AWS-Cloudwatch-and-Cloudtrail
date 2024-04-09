@@ -193,3 +193,76 @@ Now that we have created an IAM Role and also created a parameter in the Account
 ![modify](images/modify.png)
 
 ![iam role](<images/iam role.png>)
+
+
+3. Install CloudWatch agent. Create a file name script.sh and past the shell script below.
+
+### Create a file
+
+```
+vi script.sh
+```
+paste the script
+
+```
+#!/bin/bash
+wget https://s3.amazonaws.com/amazoncloudwatch-agent/linux/amd64/latest/AmazonCloudWatchAgent.zip
+unzip AmazonCloudWatchAgent.zip
+sudo ./install.sh
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c ssm:/alarm/AWS-CWAgentLinConfig -s
+
+```
+make the script executable
+
+```
+sudo chmod +x script.sh
+
+```
+![script](images/script.png)
+
+![connect to ec2](images/connect.png)
+
+![create script](<images/create script.png>)
+
+save and run script
+
+```
+./script.sh
+
+```
+![run script](images/run.png)
+
+start cloud watch agent
+
+```
+ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a start
+
+```
+![start agent](images/start.png)
+
+verify if cloudwatch is installed and running
+
+```
+ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a status
+
+```
+![running](images/running.png)
+
+
+## Step 4: Monitor Your Metric In CloudWatch
+
+Before we can monitor our EC2 instance metrics, create a new policy and attach it to our IAM role so that the role does not lack permissions to perform the ec2:Describe Tags action, which is necessary for the CloudWatch agent to retrieve EC2 instance tags.
+
+1. Create a new Policy
+
+In the IAM console navigation menu, click on policy and on the top right, select create policy. Follow the image below to creaet a new policy for the IAM role. Use the Json code snippet below for your policy
+
+![policy](images/policies.png)
+
+![edit](images/edit.png)
+
+![create policy](<images/create policy.png>)
+
+![tag](images/tag.png)
+
+
